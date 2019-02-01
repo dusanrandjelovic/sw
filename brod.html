@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Starships</title>
+    <style>
+body {
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+}
+main {
+background-attachment: fixed;
+width: 100%;
+min-height: 100vh;
+background-position: top;
+background-image: linear-gradient(to left, rgba(67,67,67,.7), rgba(0,0,0,.7)), url(robot.jpg);
+background-size: cover;
+z-index: -1000;
+}
+.potraga {
+  display: flex;
+  flex-direction: column;
+  width: 41%;
+  padding: 3%;
+  margin: auto;
+  border-bottom: 1px solid black;
+}
+#ispis {
+  text-align: center;
+  padding-bottom: 5%;
+}
+#ispis h1 {
+  margin-top: 7%;
+}
+button {
+  border: 1px solid white;
+  background-color:inherit;
+  color: white;
+  margin-top: 1%;
+}
+button:hover {
+  text-transform: uppercase;
+  cursor: pointer;
+  background: black;
+  opacity: 0.8;
+
+}
+button:active {
+  animation-name: efekat;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+@keyframes efekat {
+  100% {
+    padding: 12px;
+  }
+}
+input {
+  color: white;
+  background-color: inherit;
+  padding: 7px;
+}
+#animacija {
+  animation-name: boja;
+  animation-duration: 3.6s;
+}
+@keyframes boja {
+  0% {
+    color: DarkTurquoise;
+  }
+  50% {
+    color: LightCyan;
+    letter-spacing: 0.03em;
+  }
+  100% {
+    color: Goldenrod;
+  }
+}
+li {
+  list-style-type: none;
+
+}
+.plus {
+  width: 198px;
+  margin-top: -16px;
+  padding-top: 1%;
+  border-bottom: 1px solid white;
+}
+.plus a {
+  text-decoration: none;
+  font-size: 24px;
+  color: white;
+}
+.plus a:hover {
+  color: saddlebrown;
+
+}
+
+.podstrane {
+  display: none;
+  position: absolute;
+  background: -webkit-linear-gradient(saddlebrown, gray);
+  min-width: 198px;
+  box-shadow: 0px 8px 16px 0px rgba(10,10,10,0.6);
+  z-index: 1;
+}
+.podstrane a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+}
+.podstrane a:hover {
+  background-color: white;
+  color: saddlebrown;
+  text-transform: uppercase;
+
+}
+
+.plus:hover .podstrane {
+  display: block;
+  opacity: 0.8;
+}
+
+@media (min-width: 748px){
+  .potraga {
+    width: 33%;
+  }
+  .potraga h1 {
+    text-align: center;
+  }
+  button {
+    width: 18%;
+    margin: 18px auto;
+  }
+  #ispis {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 7%;
+  }
+  #ispis h1 {
+    margin-top: auto;
+  }
+}
+</style>
+  </head>
+  <body>
+
+    <main>
+      <ul>
+      <li class="plus"><a href="#">Find more</a>
+       <div class="podstrane">
+         <a href="brod.html">Characters</a>
+         <a href="planeta.html">Planets</a>
+         <a href="vozilo.html">Vehicles</a>
+         <a href="vrsta.html">Species</a>
+       </div>
+      </li>
+      </ul>
+      <div class="potraga">
+    <h1 id="animacija">Find informations about Star Wars starships</h1>
+    <input id="polje">
+    <button id="dugme">Find</button>
+    </div>
+    <div id="ispis">
+      </div>
+
+    </main>
+        <script src="brod.js"></script>
+  </body>
+</html>
